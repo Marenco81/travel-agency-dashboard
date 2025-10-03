@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router"
 import { sidebarItems } from "~/constants"
 import { cn } from "~/lib/utils"
 
-const NavItems = () => {
+export const NavItems = ({handleClick}: {handleClick?: () => void}) => {
 
     const user = {
         name: 'Alvaro',
@@ -13,7 +13,7 @@ const NavItems = () => {
   return (
     <section className="nav-items">
         <Link to='/' className="link-logo">
-            <img src="../public/assets/icons/logo.svg" alt="logo" className="size-[30px]"/>
+            <img src="../assets/icons/logo.svg" alt="logo" className="size-[30px]"/>
             <h1>Tourvisto</h1>
         </Link>
         <div className="container">
@@ -23,7 +23,7 @@ const NavItems = () => {
                         {({isActive}: {isActive: boolean}) => (
                             <div className={cn('group nav-item', {
                                 'bg-primary-100 !text-white' : isActive
-                            })}>
+                            })} onClick={handleClick}>
                                 <img 
                                     src={icon} 
                                     alt={label}
@@ -62,4 +62,3 @@ const NavItems = () => {
   )
 }
 
-export default NavItems
