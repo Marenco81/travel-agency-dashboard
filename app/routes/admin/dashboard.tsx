@@ -36,17 +36,17 @@ const dashboard = () => {
           <StatsCard
             headerTitle="Total Users"
             total={dashboardStats.totalUsers}
-            currentMonthCount={dashboardStats.tripsCreated.currentMonth}
-            lastMonthCount={dashboardStats.tripsCreated.lastMonth}
-          />
-          <StatsCard
-            headerTitle="Total Trips"
-            total={dashboardStats.totalTrips}
             currentMonthCount={dashboardStats.usersJoined.currentMonth}
             lastMonthCount={dashboardStats.usersJoined.lastMonth}
           />
           <StatsCard
-            headerTitle="Total Users Roles"
+            headerTitle="Total Trips"
+            total={dashboardStats.totalTrips}
+            currentMonthCount={dashboardStats.tripsCreated.currentMonth}
+            lastMonthCount={dashboardStats.tripsCreated.lastMonth}
+          />
+          <StatsCard
+            headerTitle="Active Users"
             total={dashboardStats.userRole.total}
             currentMonthCount={dashboardStats.userRole.currentMonth}
             lastMonthCount={dashboardStats.userRole.lastMonth}
