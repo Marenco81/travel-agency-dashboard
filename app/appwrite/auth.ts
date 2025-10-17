@@ -4,8 +4,9 @@ import { redirect } from "react-router"
 
 export const loginWithGoogle = async () => {
     try {
-        account.createOAuth2Session(
-            OAuthProvider.Google
+        account.createOAuth2Session({
+            provider:OAuthProvider.Google,
+        }
         )
     } catch (error) {
         console.log('loginWithGoogle', error)       
