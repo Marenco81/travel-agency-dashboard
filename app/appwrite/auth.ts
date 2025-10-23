@@ -22,7 +22,7 @@ export const getUser = async () => {
         const {documents} = await database.listDocuments(
             appwriteConfig.databaseId,
             appwriteConfig.usersCollectionId,
-            [
+            [ 
                 Query.equal('accountId', user.$id),
                 Query.select(['name', 'email', 'imageUrl', 'joinedAt', 'accountId'])
             ]
@@ -57,7 +57,7 @@ export const getGooglePicture = async () => {
 
         //Make a request to the Google People API to get the profile photo
         const response = await fetch(
-            'https://people.google.com/v1/people/me?personFields=photos',
+            'https://people.googleapis.com/v1/people/me?personFields=photos',
             {
                 headers: {
                     Authorization: `Bearer ${oAuthToken}`
